@@ -1,7 +1,11 @@
 ---
 
 - name: Set root Password
-  mysql_user: name=root host={{ item }} password={{ mysql_root_password }} state=present
+  mysql_user: 
+    name: "root" 
+    host: "{{ item }}" 
+    password: "{{ mysql_root_password }}" 
+    check_implicit_admin: "yes"
   with_items:
     - localhost
     - 127.0.0.1
