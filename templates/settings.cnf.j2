@@ -1,0 +1,11 @@
+# configuration managed by ansible
+[mysqld]
+max_allowed_packet      = {{ mysql_max_allowed_packet }}
+max_connections         = {{ mysql_max_connections }}
+innodb_file_per_table = {{ mysql_innodb_file_per_table }}
+character_set_server = {{ mysql_character_set_server }}
+collation_server = {{ mysql_collation_server }}
+character-set-client-handshake = {{ mysql_character_set_client_handshake }}
+
+[mysqldump]
+max_allowed_packet  = {{ mysql_mysqldump_max_allowed_packet }}

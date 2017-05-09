@@ -1,7 +1,16 @@
 ---
-mariadb_version: 10.0
+mariadb_version: "5.5"
 
-mysql_conf_tpl: change_me
-mysql_conf_file: settings.cnf
+mysql_conf_tpl: "settings.cnf.j2"
+mysql_conf_file: "settings.cnf"
 
-mysql_secure_installation: false
+mysql_secure_installation: true
+
+# settings for template file (customized for archivematica) 
+mysql_max_allowed_packet: "512M"
+mysql_max_connections: "500"
+mysql_innodb_file_per_table: "1"
+mysql_character_set_server: "utf8"
+mysql_collation_server: "utf8_general_ci"
+mysql_character_set_client_handshake: "FALSE"
+mysql_mysqldump_max_allowed_packet: "512M"

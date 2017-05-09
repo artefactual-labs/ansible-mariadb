@@ -1,7 +1,4 @@
 ---
-# Set root password
-# UPDATE mysql.user SET Password=PASSWORD('mysecret') WHERE User='root';
-# FLUSH PRIVILEGES;
 
 - name: Set root Password
   mysql_user: name=root host={{ item }} password={{ mysql_root_password }} state=present
@@ -34,7 +31,7 @@
 - name: Remove test database and access to it
   command: 'mysql -ne "{{ item }}"'
   with_items:
-    - DROP DATABASE test
+    - DROP DATABASE IF EXISTS test
     - DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%'
   changed_when: False
   ignore_errors: True
