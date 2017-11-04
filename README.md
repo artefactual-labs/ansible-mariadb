@@ -6,7 +6,7 @@ Installs MariaDB
 
 ```
 CentOS 6 & 7
-Ubuntu 14.04
+Ubuntu 14.04 & 16.04
 ```
 
 ## Post install
